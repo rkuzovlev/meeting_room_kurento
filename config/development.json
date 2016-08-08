@@ -1,0 +1,34 @@
+{
+	"centrifugo": {
+		"url": "http://localhost:8000",
+		"secret": "4e02110a-f4b7-43f3-a43e-a2cc8d640368",
+		"redis": {
+			"host": "127.0.0.1",
+			"port": 6370,
+			"db": 6
+		}
+	},
+	"kurento": {
+		"url": "ws://192.168.1.37:8888/kurento"
+	},
+	"gelf": {
+		"server": "kurento_node1",
+		"adapterName": "udp",
+		"adapterOptions": {
+			"protocol": "udp4",
+			"family": 4,
+			"host": "192.168.1.37",
+			"port": 12206
+		}
+	},
+	"server": {
+		"host": "localhost",
+		"port": 3010
+	},
+	"keys": [ "qp0GBwcn9VHdIQbVlF4MS2Tn" ],
+	"redis": {
+		"host": "127.0.0.1",
+		"port": 6370,
+		"db": 5
+	}
+}

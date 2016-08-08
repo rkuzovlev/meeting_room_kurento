@@ -1,0 +1,14 @@
+{
+	"env": { 
+		"es6": true, 
+		"commonjs": true,
+        "babel-eslint": true
+	},
+	"parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+}
