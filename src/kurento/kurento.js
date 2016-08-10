@@ -27,3 +27,5 @@ export let getKurento = function(){
 
 	throw new Error('kurento is not initialized, use initKurento before');
 }
+
+export { kurento }

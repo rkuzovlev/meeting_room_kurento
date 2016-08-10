@@ -21,6 +21,7 @@ class Streamer {
 	}
 
 	addCandidate(candidate){
+		console.log('addCandidate', candidate)
 		if (this.endpoint){
 			this.endpoint.addIceCandidate(candidate);
 		} else {
@@ -30,6 +31,7 @@ class Streamer {
 	}
 
 	processCandidates(){
+		console.log('processCandidates', this.candidates)
 		if (!this.endpoint){
 			throw new Error('Add webrtc endpoint first');
 		}

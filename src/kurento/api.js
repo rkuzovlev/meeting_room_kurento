@@ -9,7 +9,8 @@ export let newCandidate = function(broadcastID, streamerID, candidate){
 		let bc = storage.getBroadcast(broadcastID);
 		let streamer = bc.getStreamer(streamerID);
 
-		streamer.addCandidate(candidate);
+		let c = kurento.kurento.register.complexTypes.IceCandidate(candidate);
+		streamer.addCandidate(c);
 
 		resolve();
 	});
@@ -78,10 +79,7 @@ export let configureStreamerWebRtcEndpoint = function(broadcastID, streamerID, s
 		resolve();
 
 		webRtcEndpoint.on('OnIceCandidate', function(event) {
-			console.log('OnIceCandidate', event);
-			var candidate = kurento.register.complexTypes.IceCandidate(event.candidate);
-			console.log('candidate', candidate);
-			
+			var candidate = kurento.kurento.register.complexTypes.IceCandidate(event.candidate);
 			let data = {
 				broadcast: broadcastID,
 				type: 'iceCandidate',
@@ -119,7 +117,6 @@ export let configureStreamerWebRtcEndpoint = function(broadcastID, streamerID, s
 					type: 'error',
 					message: "" + error
 				};
-
 				cent.sendToUser(streamerID, data);
 			}
 		});
